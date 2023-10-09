@@ -3,6 +3,7 @@ import { alpha } from '@mui/material/styles';
 import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton, Popover } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { logout } from 'src/redux/reducers/auth';
 import account from '../../../_mock/account';
 
 
@@ -22,9 +23,6 @@ const MENU_OPTIONS = [
     icon: 'eva:settings-2-fill',
   },
 ];
-function logOut(){
-  return {type : 'LOGOUT'}
-}
 // ----------------------------------------------------------------------
 
 export default function AccountPopover() {
@@ -105,7 +103,7 @@ export default function AccountPopover() {
         <MenuItem
           onClick={() => {
             handleClose();
-            dispatch(logOut());
+            dispatch(logout());
             navigate('/login');
           }}
           sx={{ m: 1 }}

@@ -77,6 +77,7 @@ return  state;
  ### 2. Menambahkan aksi Lougout pada tombol logout
  ```jascript
  import { useDispatch } from  'react-redux';
+ import { logout } from 'src/redux/reducers/auth';
  ...
  ...
  <MenuItem
